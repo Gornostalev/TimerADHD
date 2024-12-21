@@ -14,6 +14,7 @@ namespace Timer
         public MainWindow()
         {
             InitializeComponent();
+            this.Topmost = true;
         }
 
 
