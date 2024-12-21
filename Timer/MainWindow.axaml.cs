@@ -26,7 +26,7 @@ namespace Timer
             timer.AutoReset = true;
             timer.Enabled = true;
             
-            
+            Start.IsEnabled = false;
         }
 
         private void Timer_Elapsed(object? sender, ElapsedEventArgs e)
@@ -53,6 +53,11 @@ namespace Timer
                     Seconds.Text = $"{seconds - 1:D2}";
                 }
             });
+        }
+
+        private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            timer.Stop();
         }
     }
 }
