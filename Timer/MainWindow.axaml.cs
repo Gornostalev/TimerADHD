@@ -60,5 +60,18 @@ namespace Timer
         {
             timer.Stop();
         }
+
+       
+        private void AddFiveMinutes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            int minute = int.Parse(Minute.Text);
+            Minute.Text = $"{minute + 5:D2}";
+        }
+
+        private void SubtractFiveMinutes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            int minute = int.Parse(Minute.Text);
+            Minute.Text = $"{minute - 5:D2}";
+        }
     }
 }
