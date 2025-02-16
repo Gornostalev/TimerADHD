@@ -19,7 +19,7 @@ namespace Timer
 
 
         System.Timers.Timer timer;
-        private void Button_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void StartTimer(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             timer = new System.Timers.Timer(1000);
             
@@ -56,7 +56,7 @@ namespace Timer
             });
         }
 
-        private void Button_Click_1(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        private void StopTimer(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
             timer.Stop();
         }
