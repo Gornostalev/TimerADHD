@@ -3,35 +3,31 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
-		Width="270" Height="150" Background="#00A2E8"
+		Width="230" Height="130" Background="#00A2E8"
         x:Class="Timer.MainWindow"
         Title="Timer">
 
-	 
-	<Grid Grid.Row="1" Margin="50 0 0 0">
-		<Grid.RowDefinitions>
-			<RowDefinition></RowDefinition>
-			<RowDefinition></RowDefinition>
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="Auto"/>
-			<ColumnDefinition Width="Auto"/>
-			 
-		</Grid.ColumnDefinitions>
-		<TextBlock Grid.Column="0" Grid.Row="0" Text="25" Name="Minute" FontSize="55"></TextBlock>
-		<TextBlock Grid.Column="1" Grid.Row="0" Text=":" FontSize="55"></TextBlock>
-		<TextBlock Grid.Column="2" Grid.Row="0" Text="00" Name="Seconds" FontSize="55"></TextBlock>
-		 
-		 <Button Background="#A349A4" Click="Button_Click" Name="Start" Height="50" Width="80" Grid.Row="1" Grid.ColumnSpan="1"  > 
-			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" FontSize="30">Start</TextBlock>
+	<Grid RowDefinitions="Auto Auto" ShowGridLines="True">
+			
+		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Spacing="5">
+			<TextBlock Grid.Column="0" Grid.Row="0" Text="25" Name="Minute" FontSize="55"></TextBlock>
+			<TextBlock Grid.Row="0" Text=":" FontSize="55"></TextBlock>
+			<TextBlock Grid.Row="0" Text="00" Name="Seconds" FontSize="55"></TextBlock>
+		</StackPanel>
+
+		<StackPanel Margin="10 0" Orientation="Horizontal" Grid.ColumnSpan="1" Grid.Row="1" Spacing="10">
+			
+		 <Button  Background="#A349A4" Click="StopTimer" Name="Start" Height="50" Width="50" Grid.Row="1"    > 
+			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" FontSize="30">+</TextBlock>
 		</Button>
 
-		<Button Background="#A349A4" Click="Button_Click_1" Name="Stop" Height="50" Width="80" Grid.Row="1"  Grid.ColumnSpan="1" Grid.Column="2"  >
-			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" FontSize="30">Stop</TextBlock>
+		<Button Background="#A349A4" Click="StopTimer" Name="Stop" Height="50" Width="50" Grid.Row="1" Grid.Column="1"   >
+			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" FontSize="30">-</TextBlock>
 		</Button>
+
+	</StackPanel>
+		<Button Margin="10 0" HorizontalAlignment="Right" Background="#A349A4" Click="StopTimer" Name="New" Height="50" Width="50" Grid.Row="1" Grid.Column="1"   >
+				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Calibri" FontSize="14">st/sp</TextBlock>
+	    </Button>
 	</Grid>
-		 
-	 
-	 
 </Window>
