@@ -3,43 +3,38 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         
-		Width="230" Height="130" Background="#00A2E8"
+		Width="440" Height="520" Background="#00A2E8"
         x:Class="Timer.MainWindow"
         Title="Timer">
 
-	<Grid RowDefinitions="Auto Auto" ShowGridLines="True">
+	<Grid RowDefinitions="" ShowGridLines="True">
+
+		<StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="120" >
 			
-		<StackPanel HorizontalAlignment="Center" Orientation="Horizontal"
-					Spacing="5">
-			<TextBlock Grid.Column="0" Grid.Row="0" Text="25" 
-					   Name="Minute" FontSize="55"></TextBlock>
-			<TextBlock Grid.Row="0" Text=":" FontSize="55"></TextBlock>
-			<TextBlock Grid.Row="0" Text="00" Name="Seconds" 
-					   FontSize="55"></TextBlock>
-		</StackPanel>
-
-		<StackPanel Margin="10 0" Orientation="Horizontal" 
-					Grid.ColumnSpan="1" Grid.Row="1" Spacing="10">
-			
-		 <Button Background="#A349A4" Click="AddFiveMinutes" Name="Start" 
-				 Height="50" Width="50" Grid.Row="1"    > 
-			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" 
-					   FontSize="30">+</TextBlock>
-		</Button>
-
-		<Button Background="#A349A4" Click="SubtractFiveMinutes" 
-				Name="Stop" Height="50" Width="50" Grid.Row="1"
-				Grid.Column="1"   >
-			<TextBlock HorizontalAlignment="Center" FontFamily="Calibri" 
-					   FontSize="30">-</TextBlock>
-		</Button>
-
-	</StackPanel>
-		<Button Margin="10 0" HorizontalAlignment="Right" Background="#A349A4" 
+		 
+		
+		<ComboBox Name="TimerSelect" Margin="225,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="32" Padding="6,4" FontSize="13">
+            <ComboBoxItem Content="5 minute" Name="fiveMinute" IsSelected="True" />
+			<ComboBoxItem Content="10 minute" Name="tenMinute"/>
+			<ComboBoxItem Content="15 minute" Name="fifTeenMinute"/>
+			<ComboBoxItem Content="20 minute" Name="twentyMinute"/>
+        </ComboBox>
+	 
+		<Button Margin="215,0,0,0" HorizontalAlignment="Left" Background="#A349A4" 
 				Click="StartTimer" Name="New" Height="50" 
-				Width="50" Grid.Row="1" Grid.Column="1">
-				<TextBlock VerticalAlignment="Center" HorizontalAlignment="Center"
-						   FontFamily="Calibri" FontSize="14">st/sp</TextBlock>
-	    </Button>
+				Width="150" Grid.Row="1" Grid.Column="1">
+
+			<Button.Content>
+				<Path
+					Data="M 0 0 L 10 5 L 0 10 Z"
+					Fill="Purple"
+					Stretch="Uniform"
+					Width="30"
+					Height="30"
+					HorizontalAlignment="Center"
+					VerticalAlignment="Center"/>
+			</Button.Content>
+		</Button>
+		</StackPanel>
 	</Grid>
 </Window>

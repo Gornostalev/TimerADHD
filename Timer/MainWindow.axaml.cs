@@ -21,38 +21,22 @@ namespace Timer
         System.Timers.Timer timer;
         private void StartTimer(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            timer = new System.Timers.Timer(1000);
+            //timer = new System.Timers.Timer(1000);
             
-            timer.Elapsed += Timer_Elapsed;
-            timer.AutoReset = true;
-            timer.Enabled = true;
+            //timer.Elapsed += Timer_Elapsed;
+            //timer.AutoReset = true;
+            //timer.Enabled = true;
             
-            Start.IsEnabled = false;
+            //Start.IsEnabled = false;
         }
 
         private void Timer_Elapsed(object? sender, ElapsedEventArgs e)
         {
             Dispatcher.UIThread.Invoke(() => {
                 
-                int minute = int.Parse(Minute.Text);
-                int seconds = int.Parse(Seconds.Text);
+                int minute = int.Parse(TimerSelect.SelectedValue.ToString());
 
-                if(seconds == 0)
-                {
-                    if (minute != 0) 
-                    {
-                        Minute.Text = $"{minute-1:D2}";
-                        Seconds.Text = "59";
-                    }
-                    else
-                    {
-                        timer.Stop();
-                    }
-                }
-                if (seconds > 0)
-                {
-                    Seconds.Text = $"{seconds - 1:D2}";
-                }
+                
             });
         }
 
@@ -64,14 +48,14 @@ namespace Timer
        
         private void AddFiveMinutes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            int minute = int.Parse(Minute.Text);
-            Minute.Text = $"{minute + 5:D2}";
+            //int minute = int.Parse(Minute.Text);
+            //Minute.Text = $"{minute + 5:D2}";
         }
 
         private void SubtractFiveMinutes(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
         {
-            int minute = int.Parse(Minute.Text);
-            Minute.Text = $"{minute - 5:D2}";
+            //int minute = int.Parse(Minute.Text);
+            //Minute.Text = $"{minute - 5:D2}";
         }
     }
 }
