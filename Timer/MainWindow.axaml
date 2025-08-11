@@ -2,25 +2,50 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
-		Width="440" Height="520" Background="#00A2E8"
+		SystemDecorations="None"
+		Width="260" Height="220" Background="#00A2E8"
         x:Class="Timer.MainWindow"
         Title="Timer">
+	<Grid PointerPressed="Grid_PointerPressed" Background="Transparent">
+		<Image Source="J:\TimerADHD\image.jpg"
+               Name="UserImage"
+               Stretch="UniformToFill"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+		<Border Height="36" VerticalAlignment="Top">
+			<Grid>
+			<Button Name="Close" Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0">
+				<Path Data="M 8 8 L 22 22 M 22 8 L 8 22"
+				 Stroke="White"
+				 StrokeThickness="2"
+				 StrokeLineCap="Round"
+				 Stretch="Uniform"
+				 VerticalAlignment="Center"
+				 HorizontalAlignment="Center"/>
+			</Button>
 
-	<Grid RowDefinitions="" ShowGridLines="True">
+			</Grid>
 
-		<StackPanel VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="120" >
-			
-		 
+		</Border>
 		
-		<ComboBox Name="TimerSelect" Margin="225,0,0,10" HorizontalAlignment="Center" VerticalAlignment="Top" Width="100" Height="32" Padding="6,4" FontSize="13">
+	<Grid  ShowGridLines="True">
+	
+		<StackPanel VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,0,0,0"
+					Spacing="10">
+		</StackPanel>
+		
+		<StackPanel VerticalAlignment="Bottom" 
+					HorizontalAlignment="Center" Height="160" >
+		<ComboBox Name="TimerSelect" Margin="0,0,0,20" 
+				  HorizontalAlignment="Center" 
+				  VerticalAlignment="Top"  Width="100" Height="32" Padding="6,4" FontSize="13">
             <ComboBoxItem Content="5 minute" Name="fiveMinute" IsSelected="True" />
 			<ComboBoxItem Content="10 minute" Name="tenMinute"/>
 			<ComboBoxItem Content="15 minute" Name="fifTeenMinute"/>
 			<ComboBoxItem Content="20 minute" Name="twentyMinute"/>
         </ComboBox>
 	 
-		<Button Margin="215,0,0,0" HorizontalAlignment="Left" Background="#A349A4" 
+		<Button HorizontalAlignment="Center" Background="#A349A4" 
 				Click="StartTimer" Name="New" Height="50" 
 				Width="150" Grid.Row="1" Grid.Column="1">
 
@@ -36,5 +61,6 @@
 			</Button.Content>
 		</Button>
 		</StackPanel>
+	</Grid>
 	</Grid>
 </Window>

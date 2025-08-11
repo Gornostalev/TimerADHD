@@ -1,5 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
+using Avalonia.Input;
 using Avalonia.Threading;
 using System;
 using System.Threading;
@@ -56,6 +57,21 @@ namespace Timer
         {
             //int minute = int.Parse(Minute.Text);
             //Minute.Text = $"{minute - 5:D2}";
+        }
+
+       
+
+        private void Grid_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
+        {
+            if (e.Source is Control && !(e.Source is Image))
+            {
+                return;
+            }
+
+            if (e.GetCurrentPoint(this).Properties.IsLeftButtonPressed)
+            {
+                BeginMoveDrag(e);
+            }
         }
     }
 }
