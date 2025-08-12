@@ -14,6 +14,7 @@
                VerticalAlignment="Center"/>
 		<Border Height="36" VerticalAlignment="Top">
 			<Grid>
+				 
 			<Button Name="Close" Click="CloseForm" Height="30" Width="30" HorizontalAlignment="Right" Margin="0,0,5,0">
 				<Path Data="M 8 8 L 22 22 M 22 8 L 8 22"
 				 Stroke="White"
@@ -39,10 +40,10 @@
 		<ComboBox Name="TimerSelect" Margin="0,0,0,20" 
 				  HorizontalAlignment="Center" 
 				  VerticalAlignment="Top"  Width="100" Height="32" Padding="6,4" FontSize="13">
-            <ComboBoxItem Content="5 minute" Name="fiveMinute" IsSelected="True" />
-			<ComboBoxItem Content="10 minute" Name="tenMinute"/>
-			<ComboBoxItem Content="15 minute" Name="fifTeenMinute"/>
-			<ComboBoxItem Content="20 minute" Name="twentyMinute"/>
+            <ComboBoxItem Content="5m" Name="fiveMinute" IsSelected="True" />
+			<ComboBoxItem Content="10m" Name="tenMinute"/>
+			<ComboBoxItem Content="15m" Name="fifTeenMinute"/>
+			<ComboBoxItem Content="20m" Name="twentyMinute"/>
         </ComboBox>
 	 
 		<Button HorizontalAlignment="Center" Background="#A349A4" 
@@ -60,6 +61,10 @@
 					VerticalAlignment="Center"/>
 			</Button.Content>
 		</Button>
+			<Button Width="30" HorizontalAlignment="Center" Opacity="0.3" Height="30" Margin="10">
+				<Path Width="24" Height="24" Stretch="Uniform" Fill="White"
+					  Data="M8 17V15H16V17H8M16 11L12 7L8 11H10.5V14H13.5V11H16M5 3H19C20.11 3 21 3.9 21 5V19C21 20.11 20.11 21 19 21H5C3.9 21 3 20.11 3 19V5C3 3.9 3.9 3 5 3M5 5V19H19V5H5Z" />
+			</Button>
 		</StackPanel>
 	</Grid>
 	</Grid>

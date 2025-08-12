@@ -59,8 +59,6 @@ namespace Timer
             //Minute.Text = $"{minute - 5:D2}";
         }
 
-       
-
         private void Grid_PointerPressed(object? sender, Avalonia.Input.PointerPressedEventArgs e)
         {
             if (e.Source is Control && !(e.Source is Image))
