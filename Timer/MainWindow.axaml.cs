@@ -73,5 +73,10 @@ namespace Timer
                 BeginMoveDrag(e);
             }
         }
+
+        private void CloseForm(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
